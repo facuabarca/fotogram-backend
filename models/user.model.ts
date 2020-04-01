@@ -29,7 +29,7 @@ usuarioSchema.method('compararPassword', function (password: string = ''): boole
 });
 
 interface IUser extends Document {
-	nombre: string;
+	name: string;
 	email: string;
 	password: string;
 	avatar?: string,

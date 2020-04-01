@@ -8,8 +8,9 @@ export default class Token {
 	constructor() { }
 
 	static getJwtToken(payload: any): string {
+		debugger;
 		return jwt.sign({
-			usuario: payload
+			user: payload
 		}, this.seed, {expiresIn: this.caducidad});
 	}
 	
