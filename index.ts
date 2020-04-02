@@ -2,6 +2,7 @@ import Server from "./classes/server";
 import userRoutes from './routes/user-routes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import postRoutes from './routes/post.routes';
 
 const server = new Server();
 
@@ -13,6 +14,7 @@ server.app.use(bodyParser.json());
 
 // Rutas de mi app.
 server.app.use('/user', userRoutes);
+server.app.use('/posts', postRoutes);
 
 // Conectar db
 mongoose.connect('mongodb://fabarca:123456qA@localhost:27017/fotosgram',
