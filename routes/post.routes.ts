@@ -19,6 +19,7 @@ postRoutes.get('/', [verifyToken], async (req: any, res: Response) => {
 							.exec();
 	res.json({
 		ok: true,
+		pagina,
 		posts
 	})
 });
