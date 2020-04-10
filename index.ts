@@ -2,6 +2,8 @@ import Server from "./classes/server";
 import userRoutes from './routes/user-routes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import fileUpload from 'express-fileupload';
+
 import postRoutes from './routes/post.routes';
 
 const server = new Server();
@@ -10,6 +12,10 @@ const server = new Server();
 // Body Parser (middleware)
 server.app.use(bodyParser.urlencoded({ extended: true }));
 server.app.use(bodyParser.json());
+
+// File Upload
+
+server.app.use(fileUpload());
 
 
 // Rutas de mi app.
