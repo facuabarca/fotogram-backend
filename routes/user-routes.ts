@@ -112,5 +112,16 @@ userRoutes.put('/update', verifyToken, (req: any, res: Response) => {
 	});
 });
 
+userRoutes.get('/', verifyToken, (req: any, res: Response) => {
+
+	const usuario = req.user;
+
+	res.json({
+		ok: true,
+		usuario
+	});
+
+});
+
 
 export default userRoutes;
