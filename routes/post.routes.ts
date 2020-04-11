@@ -25,12 +25,18 @@ postRoutes.get('/', [verifyToken], async (req: any, res: Response) => {
 		posts
 	})
 });
+
 // crear post
 postRoutes.post('/', [verifyToken], (req: any, res: Response) => {
 
 	const body = req.body;
 
 	body.user = req.user._id;
+
+	const imagenes = fileSystem.imagenesDeTempHaciaPost(req.user._id);
+
+	body.img = imagenes;
+
 
 	Post.create( body ).then( async postDb => {
 		await postDb.populate('user', '-password').execPopulate();
@@ -47,9 +53,6 @@ postRoutes.post('/', [verifyToken], (req: any, res: Response) => {
 
 postRoutes.post('/upload', [verifyToken], async (req: any, res: Response) => {
 	
-
-	
-
 	if(!req.files) {
 		return res.status(400).json({
 			ok: false,
@@ -81,7 +84,6 @@ postRoutes.post('/upload', [verifyToken], async (req: any, res: Response) => {
 		file: file.mimetype
 	});
 });
-
 
 
 export default postRoutes;
