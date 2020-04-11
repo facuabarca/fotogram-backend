@@ -77,4 +77,16 @@ export default class FileSystem {
         return fs.readdirSync(pathTemp) || [];
     }
 
+    getFotoUrl(userId: string, img: string): string {
+
+        const pathImg = path.resolve(__dirname, '../uploads/', userId, 'posts', img);
+
+        const existe = fs.existsSync(pathImg);
+        if(!existe) {
+            return path.resolve(__dirname, '../assets/original.jpg')
+        }
+
+        return pathImg;
+    }
+
 }
