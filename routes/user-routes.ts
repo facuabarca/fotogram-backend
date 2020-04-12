@@ -14,6 +14,7 @@ userRoutes.get('/prueba', (req: Request, res: Response) => {
 });
 
 userRoutes.post('/login', (req: Request, res: Response) => {
+	console.log('desde el celular')
 	const body = req.body;
 	User.findOne({ email: body.email }, (err, userDB) => {
 		if(err) throw err;
@@ -78,7 +79,7 @@ userRoutes.post('/create', (req: Request, res: Response) => {
 
 
 // update user
-userRoutes.put('/update', verifyToken, (req: any, res: Response) => {
+userRoutes.post('/update', verifyToken, (req: any, res: Response) => {
 
 	const user = {
 		name: req.body.name || req.user.name,

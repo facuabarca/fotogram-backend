@@ -10,7 +10,8 @@ class Server {
         this.app = express_1.default();
     }
     start(callback) {
-        this.app.listen(this.port, () => {
+        this.app.set('port', process.env.PORT || 3000);
+        this.app.listen(this.app.get('port'), () => {
             console.log(`Server running in ${this.port}`);
         });
     }

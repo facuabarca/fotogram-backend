@@ -8,7 +8,7 @@ const postRoutes = Router();
 const fileSystem = new FileSystem();
 
 // Obtener post
-postRoutes.get('/', [verifyToken], async (req: any, res: Response) => { 
+postRoutes.get('/',  async (req: any, res: Response) => { 
 
 	let pagina = parseInt(req.query.pagina) || 1;
 	let skip = pagina - 1;
