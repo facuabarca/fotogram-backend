@@ -22,7 +22,8 @@ server.app.use(cors_1.default({ origin: true, credentials: true }));
 server.app.use('/user', user_routes_1.default);
 server.app.use('/posts', post_routes_1.default);
 // Conectar db
-mongoose_1.default.connect('mongodb://localhost:27017/fotosgram', { useNewUrlParser: true, useCreateIndex: true }, (error) => {
+// mongoose.connect('mongodb://localhost:27017/fotosgram', // local
+mongoose_1.default.connect('mongodb+srv://facuabarca:123456qA@fotosgram-sgj5u.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true }, (error) => {
     if (error) {
         throw error;
     }

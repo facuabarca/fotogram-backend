@@ -26,7 +26,9 @@ server.app.use('/user', userRoutes);
 server.app.use('/posts', postRoutes);
 
 // Conectar db
-mongoose.connect('mongodb://localhost:27017/fotosgram',
+
+// mongoose.connect('mongodb://localhost:27017/fotosgram', // local
+mongoose.connect('mongodb+srv://facuabarca:123456qA@fotosgram-sgj5u.mongodb.net/test?retryWrites=true&w=majority',
 
 	{ useNewUrlParser: true, useCreateIndex: true }, (error) => {
 		if (error) {
