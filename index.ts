@@ -29,6 +29,7 @@ server.app.use('/posts', postRoutes);
 // Conectar db
 
 // mongoose.connect('mongodb://localhost:27017/fotosgram', // local
+console.log('MONGO SE VA A EJECUTAR EN LA SIGUIENTE URL:mongodb+srv://facuabarca:123456qA@fotosgram-sgj5u.mongodb.net/test?retryWrites=true&w=majority ')
 mongoose.connect('mongodb+srv://facuabarca:123456qA@fotosgram-sgj5u.mongodb.net/test?retryWrites=true&w=majority',
 
 	{ useNewUrlParser: true, useCreateIndex: true }, (error) => {
