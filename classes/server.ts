@@ -13,7 +13,7 @@ export default class Server {
 		this.app.set('port', process.env.PORT || 3000);
 		console.log('El servidor esta ejecutando este puerto::: ', this.app.get('port'))
 		this.app.listen(this.app.get('port'), () => {
-			console.log(`Server running in ${this.port}`);
+			console.log(`Server running in ${this.app.get('port')}`);
 		});
 	}
 

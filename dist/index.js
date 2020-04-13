@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const server_1 = __importDefault(require("./classes/server"));
 const user_routes_1 = __importDefault(require("./routes/user-routes"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const cors_1 = __importDefault(require("cors"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
 const post_routes_1 = __importDefault(require("./routes/post.routes"));
@@ -17,7 +16,8 @@ server.app.use(body_parser_1.default.json());
 // File Upload
 server.app.use(express_fileupload_1.default());
 // Configuración de CORS
-server.app.use(cors_1.default({ origin: true, credentials: true }));
+// server.app.use(cors({ origin: true, credentials: true }));
+console.log('Puertoooooooo');
 // Rutas de mi app.
 server.app.use('/user', user_routes_1.default);
 server.app.use('/posts', post_routes_1.default);

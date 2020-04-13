@@ -19,7 +19,8 @@ server.app.use(bodyParser.json());
 server.app.use(fileUpload());
 
 // Configuración de CORS
-server.app.use(cors({ origin: true, credentials: true }));
+// server.app.use(cors({ origin: true, credentials: true }));
+console.log('Puertoooooooo');
 
 // Rutas de mi app.
 server.app.use('/user', userRoutes);
